@@ -1,0 +1,63 @@
+\begin{frame}{}
+    \transcover
+\end{frame}
+
+\begin{frame}{}
+    \transfade
+    \begin{columns}
+    \column{0.4\textwidth}
+    \begin{itemize}
+        \item<1->[$\blacksquare$] Kahn's Algorithm
+        \item<2->[$\blacksquare$] BFS
+        \item<3->[$\blacksquare$] {$O(|V|+|E|)$}
+    \end{itemize}
+    \column<1->{0.6\textwidth}
+    \input{kahns_algo}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{}
+    \transcover
+\end{frame}
+
+\begin{frame}{}
+    \transfade
+    \color{black}
+    \begin{figure}
+    \centering
+        \begin{tikzpicture}
+        \node<1-3> (A) [vertex3] {\Large A};
+        \node<1-3> (B) [vertex3, right of = A,xshift = 60] {\Large B};
+        \node<1-3> (C) [vertex3, right of = A,xshift =20, yshift=-60] {\Large C};
+        
+        \node<4> (A) [vertex] {A \nodepart{lower} 1};
+        \node<4> (B) [vertex, right of = A,xshift = 60] {B \nodepart{lower} 1};
+        \node<4> (C) [vertex, right of = A,xshift =20, yshift=-60] {C \nodepart{lower} 1};
+        \draw [arrow] (A) -- (B);
+        \draw [arrow] (B) -- (C);
+        \draw [arrow] (C) -- (A);
+    \end{tikzpicture}
+    \end{figure}
+    \begin{block}{}<2->
+            \centering
+            \Large What is the topological order?
+    \end{block}
+    \begin{block}{}<3->
+            \centering
+            \color{red}
+            \Huge Not possible :(
+    \end{block}
+\end{frame}
+
+\begin{frame}{}
+    \transfade
+    \Large
+    \begin{block}{}<1->
+        \centering
+        Topological sorting is applicable for Directed Acyclic Graph (DAG). 
+    \end{block}
+    %  \begin{block}{}<2>
+    %     \centering
+    %     What's wrong with cyclic graphs? 
+    % \end{block}
+\end{frame}

@@ -1,0 +1,158 @@
+\input{Simulation_souvik/Cycle}
+
+\input{Page/Application.tex}
+
+\setbeamercolor{background canvas}{bg=white}
+\input{Simulation_souvik/0}
+
+\begin{frame}{}
+    \transcover
+\end{frame}
+
+\begin{frame}{}
+\transfade
+    \begin{textblock}{15}(1,2)
+    \begin{itemize}
+        \item[$\blacksquare$] Operation System deadlock detection.  
+    \end{itemize}
+    \end{textblock}
+    \begin{textblock}{16}(0,4.4)
+    \setbeamercovered{transparent}
+    \begin{figure}
+        \centering
+        \begin{tikzpicture}[->, thick, >=stealth]
+            \node(A) [vertex7, fill=blue!30]  {Process 1};
+            \node(B) [vertex5, below of = A, xshift = -80, yshift = -15,fill=orange!30] {Resource 1};
+            \node(C) [vertex5, below of = A, xshift = 80, yshift = -15,fill=orange!30] {Resource 2};
+            \node(D) [vertex7, below of = A, xshift = 0, yshift = -60, fill=blue!30] {Process 2};
+            
+            
+            \path (A) edge [bend right] node[anchor=east] {Waiting for} (B);
+            \path (B) edge [bend right] node[anchor=east] {Assigned to} (D);
+            \path (D) edge [bend right] node[anchor=west] {Waiting for} (C);
+            \path (C) edge [bend right] node[anchor=west] {Assigned to} (A);
+            
+        \end{tikzpicture}
+    \end{figure}
+\end{textblock}
+\end{frame}
+
+\begin{frame}{}
+    \transcover
+\end{frame}
+
+\begin{frame}{}
+\transfade
+    \begin{textblock}{15}(1,2)
+    \begin{itemize}
+        \item[$\blacksquare$] Course Schedule problem. 
+    \end{itemize}
+    \end{textblock}
+    \begin{textblock}{16}(0,4)
+    \setbeamercovered{transparent}
+    \begin{figure}
+        \centering
+        \begin{tikzpicture}[->, thick, >=stealth]
+            \node(A) [vertex5]  {CSE 309};
+            \node(B) [vertex5, below of = A, xshift = 0, yshift = -15] {CSE 211};
+            \node(C) [vertex5, right of = A, xshift = 50, yshift =  75] {CSE 101};
+            \node(D) [vertex5, right of = A, xshift = 50, yshift =  40] {CSE 107};
+            \node(E) [vertex5, right of = A, xshift = 50, yshift =  0] {CSE 203};
+            \node(F) [vertex5, below of = E, xshift = 0, yshift =  -15] {CSE 207};
+            \node(G) [vertex5, right of = E, xshift = 90, yshift =  0] {CSE 205};
+            \node(H) [vertex5, right of = F, xshift = 50, yshift =  0] {CSE 305};
+            \node(I) [vertex5, right of = F, xshift = 130, yshift =  0] {CSE 315};
+
+            \draw (B) -- (A);
+            \draw (C) -| (A);
+            \draw (C) -- (D);
+            \draw (D) -- (E);
+            \draw (E) -- (F);
+            \draw (G) -| (H);
+            \draw (G) -| (I);        
+        
+        \end{tikzpicture}
+
+    \end{figure}
+\end{textblock}
+\end{frame}
+
+\begin{frame}{}
+    \transfade
+    \begin{textblock}{15}(1,2)
+        \begin{itemize}
+            \item[$\blacksquare$] Course Schedule problem. 
+        \end{itemize}
+    \end{textblock}
+    
+    \begin{textblock}{16}(0,5.5)
+    \centering
+    \begin{tikzpicture}[->, thick, >=stealth]
+    \node(A) [vertex6]  {CSE 101};
+    \node(B) [vertex6, right of = A, xshift = 15, yshift = 0] {CSE 107};
+    \node(C) [vertex6, right of = B, xshift = 15, yshift =  0] {CSE 203};
+    \node(D) [vertex6, right of = C, xshift = 15, yshift =  0] {CSE 207};
+    \node(E) [vertex6, right of = D, xshift = 15, yshift =  0] {CSE 205};
+    \node(F) [vertex6, right of = E, xshift = 15, yshift =  0] {CSE 211};
+    \node(G) [vertex6, right of = F, xshift = 15, yshift =  0] {CSE 305};
+    \node(H) [vertex6, right of = G, xshift = 15, yshift =  0] {CSE 309};
+    \node(I) [vertex6, right of = H, xshift = 15, yshift =  0] {CSE 315}; 
+    
+    \draw (A) -- (B);
+    \draw (B) -- (C);
+    \draw (C) -- (D);
+    \draw (A) --+ (0,1.5) -| (H);
+    \draw (F) --+ (0,-1) -| (H);
+    \draw (E) --+ (0,1) -| (G);
+    \draw (E) --+ (0,-1.5) -| (I);
+    \end{tikzpicture}
+    \end{textblock}
+\end{frame}
+
+
+\begin{frame}{}
+    \transcover
+\end{frame}
+
+\begin{frame}{}
+\transfade
+\begin{textblock}{16}(1,1.5)
+    \begin{tikzpicture}
+
+    \node<1->[inner sep=0pt] (b) at (0,4)
+        {\includegraphics[width=.15\textwidth]{Simulation_souvik/Pictures/dependency.jpeg}};
+    \node<1->[below of = b, yshift=-20]{Dependency resolution}; 
+    
+    \node<2->[inner sep=0pt] (f) at (5,4) {\includegraphics[width=.18\textwidth]{Simulation_souvik/Pictures/workflow.png}};
+    \node<2->[below of = f, yshift=-20]{Manufacturing workflow};  
+      
+    \node<3->[inner sep=0pt] (e) at (10,4)
+        {\includegraphics[width=.18\textwidth]{Simulation_souvik/Pictures/critical.jpeg}};
+    \node<3->[below of = e, yshift=-20]{Critical path analysis};
+    
+    \node<4->[inner sep=0pt] (c) at (0,0.5)
+        {\includegraphics[width=.18\textwidth]{Simulation_souvik/Pictures/sentance.jpeg}};
+    \node<4->[below of = c, yshift=-15]{Sentence ordering};   
+    
+    \node<5->[inner sep=0pt] (a) at (5,0.5)
+        {\includegraphics[width=.2\textwidth]{Simulation_souvik/Pictures/Task.png}};  
+    \node<5->[below of = a, yshift=-15]{Task scheduling};
+    
+    \node<6->[inner sep=0pt] (d) at (10,0.5)
+        {\includegraphics[width=.18\textwidth]{Simulation_souvik/Pictures/data.jpeg}};
+    \node<6->[below of = d, yshift=-15]{Data serialization};
+\end{tikzpicture}
+\end{textblock}
+\end{frame}
+
+
+% \begin{frame}{}
+%     \begin{itemize}
+%         \item[$\blacksquare$] Single Source Shortest Path in a DAG. \pause
+%         \item[$\blacksquare$] Dependency resolution.\pause
+%         \item[$\blacksquare$] Sentence Ordering. \pause
+%         \item[$\blacksquare$] Critical Path Analysis. \pause
+%         \item[$\blacksquare$] Scheduling jobs from given dependencies among Jobs. For example, if some job requires the dependency of some other job, then we can use topological sorting. \pause
+%         \item[$\blacksquare$] Other applications like manufacturing workflows, data serialization and context-free grammar. \pause
+%     \end{itemize}
+% \end{frame}

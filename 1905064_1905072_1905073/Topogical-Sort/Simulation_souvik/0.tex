@@ -1,0 +1,55 @@
+\begin{frame}{}
+\transfade
+    \begin{textblock}{15}(1,2)
+    \begin{itemize}
+        \item[$\blacksquare$] Detecting cycle in a graph.
+    \end{itemize}
+    \end{textblock}
+    \begin{textblock}{16}(0,3)
+    \setbeamercovered{transparent}
+    \begin{figure}
+        \centering
+        \begin{tikzpicture}[->, thick, >=stealth]
+            \node(A) [vertex4, fill=orange!30]  {};
+            \node(B) [vertex4, right of = A, xshift = 10, yshift =  35, fill=orange!30] {};
+            \node<1>(C) [vertex4, right of = A, xshift = 10, yshift = -35, fill=orange!30] {};
+            \node<2>(C) [vertex4, right of = A, xshift = 10, yshift = -35, fill=blue!30] {};
+            \node<1>(D) [vertex4, right of = C, xshift = 10, yshift =  35, fill=orange!30] {};
+            \node<2>(D) [vertex4, right of = C, xshift = 10, yshift =  35, fill=blue!30] {};
+            \node<1>(E) [vertex4, right of = D, xshift = 10, yshift =  35, fill=orange!30] {};
+            \node<2>(E) [vertex4, right of = D, xshift = 10, yshift =  35, fill=blue!30] {};
+            \node<1>(F) [vertex4, right of = D, xshift = 10, yshift = -35, fill=orange!30] {};
+            \node<2>(F) [vertex4, right of = D, xshift = 10, yshift = -35, fill=blue!30] {};
+            \node(G) [vertex4, right of = B, xshift = 10, yshift = 35, fill=orange!30] {};
+            \node(H) [vertex4, right of = C, xshift = 10, yshift = -35, fill=orange!30] {};
+            \node(I) [vertex4, right of = D, xshift = 45, yshift = 0, fill=orange!30] {};
+
+            \draw (A) -- (B);
+            \draw (A) -- (C);
+            \draw (A) -- (D);
+            \draw (B) -- (D);
+            \draw (B) -- (E);
+            \draw<1> (C) -- (D);
+            \draw<2> [arrow,blue!50] (C) -- (D);
+            \draw<1> (F) -- (C);
+            \draw<2> [arrow,blue!50] (F) -- (C);            
+            \draw<1> (D) -- (E);
+            \draw<2> [arrow,blue!50] (D) -- (E);
+            \draw (D) -- (F);
+            \draw<1> (E) -- (F);
+            \draw<2> [arrow,blue!50] (E) -- (F);
+            \draw (B) -- (G);
+            \draw (E) -- (G);
+            \draw (E) -- (I);
+            \draw (I) -- (F);
+            \draw (H) -- (C);
+            \draw (H) -- (F);
+            
+            
+            
+        \end{tikzpicture}
+    \end{figure}
+\end{textblock}
+
+
+\end{frame}

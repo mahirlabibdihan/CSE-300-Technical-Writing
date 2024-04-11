@@ -1,0 +1,26 @@
+\begin{algorithm}[H]
+    % \algsetup{linenosize=\tiny}
+    \begin{algorithmic}[1]
+    \small
+    \Procedure{TopoSort}{$G$} 
+    \State create a list $L$
+    \State create a queue $Q$
+    \ForEach {vertex $v \in G$}
+    \If{the indegree of $v = 0$}
+    \State put v into the $Q$
+    \EndIf
+    \EndFor
+    \While{$Q$ is not empty}
+    \State pop a vertex v out of $Q$
+    \State add v to the end of $L$
+    \ForEach {edge $(u,v) \in G$}
+    \State decrement the indegree of u
+    \If{the indegree of $u = 0$}
+    \State put u into the $Q$
+    \EndIf
+    \EndFor
+    \EndWhile
+    \State \Return $L$
+    \EndProcedure
+    \end{algorithmic}
+\end{algorithm}

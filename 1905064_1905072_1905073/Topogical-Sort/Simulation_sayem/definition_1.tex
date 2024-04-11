@@ -1,0 +1,29 @@
+
+\begin{textblock}{14}(1,2)
+\begin{itemize}
+        \item<1-> 
+        For every edge in a DAG, the starting vertex is visited before ending vertex..
+\end{itemize}
+\end{textblock}
+
+
+\begin{textblock}{16}(0,4)
+    \begin{figure}
+    \centering
+    \begin{tikzpicture}
+    \node<2> (a) [inactive node] {a} ;
+    \node<2> (b) [inactive node, right of = a, xshift = 40, yshift = 50] {b};
+    \node<2> (c) [inactive node, right of = a, xshift = 40, yshift = -50] {c};
+    
+    \draw<2> [inactive edge] (a) -- (b);
+    \draw<2> [inactive edge] (a) -- (c);
+    \draw<2> [inactive edge] (b) -- (c);
+    
+    \end{tikzpicture}
+\end{figure}
+\end{textblock}
+
+
+
+
+

@@ -1,0 +1,31 @@
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+    \node (a) [inactive node] {a} ;
+   
+    \node (b) [active node, right of = a, xshift = 40, yshift = 50] {b};
+    \node<2> (b) [active node2, right of = a, xshift = 40, yshift = 50] {b};
+    
+    \node (c) [active node, right of = a, xshift = 40, yshift = -50] {c};
+    \node<4> (c) [active node2, right of = a, xshift = 40, yshift = -50] {c};
+    
+    \node (d) [inactive node, right of = b, xshift = 40, yshift = -50] {d};
+    
+    \draw [inactive edge] (a) -- (b);
+    
+    \draw [inactive edge] (a) -- (c);
+    \draw [inactive edge] (b) -- (d);
+    \draw [active edge] (b) -- (c);
+    \end{tikzpicture}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+    \node<1-> (a) [listed node] {a} ;
+    \node<1-4> (b1) [listed node, right of = a, xshift = 40,yshift=15] {b};
+    \node<1-4> (c1) [listed node, right of = a, xshift = 40,yshift=-15] {c};
+    \node<5> (b) [listed node, right of = a, xshift = 30] {b};
+    \node<5> (c) [listed node, right of = b, xshift = 30] {c};
+    \end{tikzpicture}
+\end{figure}

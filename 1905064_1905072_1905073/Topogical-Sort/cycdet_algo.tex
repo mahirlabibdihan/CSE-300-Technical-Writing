@@ -1,0 +1,29 @@
+\begin{algorithm}[H]
+    % \algsetup{linenosize=\tiny}
+    \footnotesize
+    \begin{algorithmic}[1]
+    % \Require $n \geq 0$
+    \Procedure{CycleDetection}{$a,b$} 
+    % \Ensure $y = x^n$
+    \State $counter \gets 0$
+    \State create a queue $box$
+    \ForEach {$v \in G$}
+    \If{the indegree of $v = 0$}
+    \State put v into the $box$
+    \EndIf
+    \EndFor
+    \While{$box$ is not empty}
+    \State pop a vertex v out of $box$
+    \State $counter \gets counter+1$
+    \ForEach {$(u,v)$}
+    \State decrement the indegree of u
+    \If{the indegree of $u = 0$}
+    \State put u into the $box$
+    \EndIf
+    \EndFor
+    \EndWhile
+    \If{$counter \neq$ number of vertices}
+    \State exception(the graph has cycle)
+    \end{algorithmic}
+    \caption{Kahn's Algorithm for Topological sort}
+    \end{algorithm}

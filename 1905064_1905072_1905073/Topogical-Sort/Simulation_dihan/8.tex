@@ -1,0 +1,69 @@
+\begin{textblock}{15}(1,2)
+    \begin{itemize}
+        \only<1> {
+        \vfill \item[$\blacksquare$] We have found the topological order
+            }
+    \end{itemize}
+\end{textblock}
+
+\begin{textblock}{6}(0,4.4)
+    \setbeamercovered{transparent}
+    \begin{figure}
+        \centering
+        \begin{tikzpicture}[->, thick, >=stealth]
+            \node<1>(A) [vertex4]  {A};
+            \node(B) [vertex4, right of = A, xshift = 0, yshift =  35] {B};
+            \node(C) [vertex4, right of = A, xshift = 0, yshift = -35] {C};
+            \node(D) [vertex4, right of = C, xshift = 0, yshift =  35] {D};
+            \node(E) [vertex4, right of = D, xshift = 0, yshift =  35] {E};
+            \node(F) [vertex4, right of = D, xshift = 0, yshift = -35] {F};
+
+            \draw (A) -- (B);
+            \draw (A) -- (C);
+            \draw (A) -- (D);
+            \draw (B) -- (D);
+            \draw (B) -- (E);
+            \draw (C) -- (D);
+            \draw (C) -- (F);
+            \draw (D) -- (E);
+            \draw (D) -- (F);
+        \end{tikzpicture}
+    \end{figure}
+
+\end{textblock}
+
+\begin{textblock}{3}(4.7,7.7)
+    \begin{tikzpicture}
+        \draw [arrow] (0,0) -- (1,0);
+    \end{tikzpicture}
+\end{textblock}
+
+\begin{textblock}{5}(2,11)
+    \color{black} Unsorted Graph
+\end{textblock}
+\begin{textblock}{8}(8.3,11)
+    Topologically Sorted Graph
+\end{textblock}
+\begin{textblock}{10}(5.5,6)
+    \begin{figure}
+        \begin{tikzpicture}[->, thick, >=stealth]
+            \node(A) [vertex4] {A};
+            \node(B) [vertex4, right of=A, xshift=15] {B};
+            \node(C) [vertex4, right of=B, xshift=15] {C};
+            \node(D) [vertex4, right of=C, xshift=15] {D};
+            \node(E) [vertex4, right of=D, xshift=15] {E};
+            \node(F) [vertex4, right of=E, xshift=15] {F};
+
+            \path (A) edge [] node {} (B);
+            \path (B) edge [] node {} (C);
+            \path (A) edge [bend left] node {} (C);
+            \path (C) edge [] node {} (D);
+            \path (B) edge [bend left] node {} (D);
+            \path (A) edge [bend right] node {} (D);
+            \path (B) edge [bend right] node {} (E);
+            \path (D) edge [] node {} (E);
+            \path (D) edge [bend left] node {} (F);
+            \path (C) edge [bend right] node {} (F);
+        \end{tikzpicture}
+    \end{figure}
+\end{textblock}

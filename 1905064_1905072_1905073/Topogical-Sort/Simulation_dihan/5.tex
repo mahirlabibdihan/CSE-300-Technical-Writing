@@ -1,0 +1,55 @@
+\begin{textblock}{15}(1,2)
+\begin{itemize}
+    \only<1> {
+        \vfill \item[$\blacksquare$] Add node D to the topological ordering and remove it from graph
+    }
+    \only<2> {
+        \vfill \item[$\blacksquare$] Now Both E and F have indegree = 0. Select either to be added to the topological ordering.
+    }
+\end{itemize}
+\end{textblock}
+\begin{textblock}{15}(0,3)
+\begin{figure}
+\centering
+    \begin{tikzpicture}
+        \node(A) [vertex, opacity = 0.2]  {A \nodepart{lower} 0};
+        \node(B) [vertex, opacity = 0.2, right of = A, xshift = 15, yshift = 50] {B \nodepart{lower} 0};
+        \node(C) [vertex, opacity = 0.2, right of = A,xshift = 15, yshift = -50] {C \nodepart{lower} 0};
+        \node(D) [vertex, opacity = 0.2,right of = C, xshift = 15, yshift = 50] {D \nodepart{lower} 0};
+        \node(E) [vertex, right of = D, xshift = 15, yshift = 50] {E \nodepart{lower} 0};
+        \node<2>(E) [vertex, right of = D, xshift = 15, yshift = 50, fill=blue!30] {E \nodepart{lower} 0};
+        \node(F) [vertex, right of = D, xshift = 15, yshift = -50] {F \nodepart{lower} 0};
+        \node<2>(F) [vertex, right of = D, xshift = 15, yshift = -50, fill=blue!30] {F \nodepart{lower} 0};
+        
+        \draw [arrow, color = gray!30] (A) -- (B);
+        \draw [arrow, color = gray!30] (A) -- (C);
+        \draw [arrow, color = gray!30] (A) -- (D);
+        \draw [arrow, color = gray!30] (B) -- (D);
+        \draw [arrow, color = gray!30] (B) -- (E);
+        \draw [arrow, color = gray!30] (C) -- (D);
+        \draw [arrow, color = gray!30] (C) -- (F);
+        \draw [arrow, color = gray!30] (D) -- (E);
+        \draw [arrow, color = gray!30] (D) -- (F);
+    \end{tikzpicture}
+\end{figure}
+\end{textblock}
+
+\begin{textblock}{12}(1.3,12.5)
+    \color{black}
+    Topological\\Order
+\end{textblock}
+
+\begin{textblock}{12}(3.5,12.5)
+\begin{tikzpicture}[->, thick, >=stealth]
+    \node(A) [vertex2] {A};
+    \node(B) [vertex2, right of=A, xshift=20] {B};
+    \node(C) [vertex2, right of=B, xshift=20] {C};
+    \node(D) [vertex2, right of=C, xshift=20] {D};
+    \path (A) edge [] node {} (B);
+    \path (B) edge [] node {} (C);
+    \path (A) edge [bend left] node {} (C);
+    \path (C) edge [] node {} (D);
+    \path (B) edge [bend left] node {} (D);
+    \path (A) edge [bend right] node {} (D);
+\end{tikzpicture}
+\end{textblock}

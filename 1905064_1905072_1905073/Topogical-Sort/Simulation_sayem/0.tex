@@ -1,0 +1,17 @@
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+    \node (a) [normal node] {a} ;
+    \node (b) [normal node, right of = a, xshift = 40, yshift = 50] {b};
+    \node (c) [normal node, right of = a, xshift = 40, yshift = -50] {c};
+    \node (d) [normal node, right of = b, xshift = 40, yshift = -50] {d};
+    \draw [normal edge] (a) -- (b);
+    \draw [normal edge] (a) -- (c);
+    \draw [normal edge] (b) -- (d);
+    \draw [normal edge] (b) -- (c);
+    \end{tikzpicture}
+\end{figure}
+
+
+

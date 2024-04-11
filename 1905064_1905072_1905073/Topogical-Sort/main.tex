@@ -1,0 +1,68 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{algorithmicx}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{transparent}
+\title{TOPOLOGICAL SORT}
+\author{mahirlabibdihan}
+\date{February 2023}
+
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning}
+\usetikzlibrary{positioning, calc}
+\usetikzlibrary{arrows,shapes, arrows.meta}
+\usetikzlibrary {automata} 
+\usecolortheme{seahorse}
+\usefonttheme{professionalfonts}
+\beamertemplatenavigationsymbolsempty
+\tikzstyle{arrow} = [ line width=1mm,->,-latex]
+\algnewcommand\algorithmicforeach{\textbf{for each}}
+\algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
+\tikzstyle{vertex}=[circle split,draw = black,thick, minimum size=30pt,inner sep=3pt, fill=brown!30, outer sep=2pt]
+\tikzstyle{vertex2}=[circle,draw = black,thick, minimum size=20pt,inner sep=3pt,  fill=blue!30, outer sep=2pt]
+\tikzstyle{vertex3}=[circle,draw = black,thick, minimum size=30pt,inner sep=3pt,  fill=brown!30, outer sep=2pt]
+\tikzstyle{vertex4}=[circle,draw = black,thick, minimum size=15pt,inner sep=3pt,  fill=brown!30, outer sep=2pt]
+\tikzstyle{vertex5}=[rectangle,draw = black,thick, minimum width=50, minimum height = 20, inner sep=3pt,  fill=brown!30, outer sep=2pt]
+
+\tikzstyle{vertex6}=[rectangle,draw = black,thick, minimum width=28, minimum height = 15, inner sep=3pt,  fill=brown!30, outer sep=2pt, text width=18, align=center]
+\tikzstyle{vertex7}=[ellipse,draw = black,thick, minimum width=50, minimum height = 20, inner sep=3pt,  fill=brown!30, outer sep=2pt]
+\tikzstyle{vertex8}=[ellipse,draw = black,thick, minimum width=50, minimum height = 30, inner sep=3pt,  fill=brown!30, outer sep=2pt]
+\tikzstyle{selected vertex} = [vertex, fill=red!50]
+\tikzstyle{blue vertex} = [vertex, fill=blue!24]
+\tikzstyle{edge} = [draw,thick,-]
+\tikzstyle{weight} = [font=\small]
+\tikzstyle{selected edge} = [draw,line width=5pt,-,red!50]
+\tikzstyle{ignored edge} = [draw,line width=5pt,-,black!20]
+\tikzstyle{greenrect} = [rectangle, minimum width=0.5cm, minimum height=5cm, draw=white, fill=white]
+
+\tikzstyle{active edge} =[draw,->, line width=3pt, orange]
+\tikzstyle{inactive edge}=[draw,->, line width=2pt, black!50]
+\tikzstyle{normal edge}=[draw,->, line width=2pt, black]
+
+\tikzstyle{active node} = [circle, draw=black, thick, minimum size=20pt,inner sep=3pt,  fill=yellow!50, outer sep=2pt ]
+\tikzstyle{active node2} = [circle, draw=black, thick, minimum size=20pt,inner sep=3pt,  fill=green!50, outer sep=2pt]
+\tikzstyle{inactive node} = [circle, draw=black!50, thick, minimum size=20pt,inner sep=3pt,  outer sep=2pt]
+\tikzstyle{normal node} = [circle, draw=black, thick, minimum size=20pt,inner sep=3pt, outer sep=2pt ]
+\tikzstyle{listed node} = [circle, draw=black, thick, minimum size=20pt,inner sep=3pt,  fill=blue!50, outer sep=2pt]
+
+
+
+
+
+\setbeamercolor{itemize item}{fg=black}
+% \defbeamertemplate{itemize item}{\blacksquare}{}
+% \setbeamertemplate{itemize items}[\blacksquare]
+
+\begin{document}
+\input{Page/Title.tex}
+\input{Page/Introduction.tex}
+\input{sayem.tex}
+\input{Page/Simulation.tex}
+\input{dihan.tex}
+
+\input{souvik.tex}
+\input{Page/ThankYou.tex}
+\end{document}

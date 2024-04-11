@@ -1,0 +1,28 @@
+\documentclass[12pt]{article}
+\usepackage{tikz}
+\usepackage{lipsum}
+\author{Mahir Labib Dihan}
+\title{My first LaTeX}
+
+\begin{document}
+\maketitle
+\lipsum[1]
+
+\begin{tikzpicture}
+    \draw[very thick,fill=yellow] (0,0) circle (7cm);
+    \draw[fill] (-3,2.5) circle (1cm);
+    \draw[fill=white] (-3,2.5) circle (0.3cm);
+    \draw[fill] (3,2.5) circle (1cm);
+    \draw[fill=white] (3,2.5) circle (0.3cm);
+
+    \draw[very thick] (-4,-2) .. controls(-2,-5) and (2,-5) .. (4,-2);
+\end{tikzpicture}
+    
+
+\end{document}
+
+% Arrow
+% Circle
+% Graph - Desmos
+% Node
+% Flowchart

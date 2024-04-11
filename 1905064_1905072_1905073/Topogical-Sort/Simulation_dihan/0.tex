@@ -1,0 +1,46 @@
+    \color{black}
+    % \begin{block}{}<1->
+    %     Let's say we have two tasks A and B. 
+    % \end{block}
+    % \begin{block}{}<3->
+    %     Task A is prerequisite of Task B.
+    % \end{block}
+
+    \begin{textblock}{14}(1,2)
+    \begin{itemize}
+        \only<1-2> {
+            \vfill \item<1->[$\blacksquare$] Let's say there are two nodes A and B.
+            \vfill \item<2->[$\blacksquare$] And there is an edge from A to B, we can say that B is dependent on A
+        }
+        \item[$\blacksquare$]<3-> Focus on indegree (Number of incoming edges) in each node
+        \item<4->[$\blacksquare$] Indegree represents dependency. B has 1, A has none.
+        \item<5->[$\blacksquare$] A node can be visited only if it doesn't have any dependencies or we can say if the indegree is 0 
+    \end{itemize}
+    \end{textblock}
+
+    \begin{textblock}{16}(0,7)
+    \begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \node<1-2> (A) [vertex3] {\Large A};
+        \node<1-2> (B) [vertex3, right of = A,xshift = 60] {\Large B};
+        \draw<2-2> [arrow] (A) -- (B);
+        
+        \node<3-> (A) [vertex] {A \nodepart{lower} 0};
+        \node<3-> (B) [vertex, right of = A,xshift = 60] {B \nodepart{lower} 1};
+        \draw<3-> [arrow] (A) -- (B);
+
+    \end{tikzpicture}
+    % \begin{textblock}{16}(0,7.3)
+    % \begin{tikzpicture}
+    %     \node<5-> (T1) [yshift=0,xshift=0,red] {\Large \textbf{Indegree}};
+    %     \draw<5->[arrow, draw=red] (T1.west) -|+ (-0.45,1.35);
+    %     \draw<5->[arrow, draw=red] (T1.east) -|+ (0.45,1.35);
+    %     % \path [->, draw=red]
+    %     %     (T1.west) edge [bend left] (-1.5,1.3)
+    %     %     (T1.east) edge [bend right] (1.5,1.3);
+    % \end{tikzpicture}
+    % \end{textblock}
+    \end{figure}
+    \end{textblock}
+    

@@ -1,0 +1,29 @@
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+    \node (a) [active node] {a} ;
+    \node<2> (a) [active node2] {a} ;
+    
+    \node (b) [active node, right of = a, xshift = 40, yshift = 50] {b};
+    \node<4> (b) [active node2, right of = a, xshift = 40, yshift = 50] {b};
+
+    \node (c) [inactive node, right of = a, xshift = 40, yshift = -50] {c};
+    \node (d) [inactive node, right of = b, xshift = 40, yshift = -50] {d};
+    
+    \draw [active edge] (a) -- (b);
+    
+    \draw [inactive edge] (a) -- (c);
+    \draw [inactive edge] (b) -- (d);
+    \draw [inactive edge] (b) -- (c);
+    \end{tikzpicture}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+    \node<3-> (a) [listed node] {a} ;
+    \node<5> (b) [listed node, right of = a, xshift = 40] {b};
+ 
+    
+    \end{tikzpicture}
+\end{figure}
